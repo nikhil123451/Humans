@@ -10,5 +10,13 @@ public class Adult extends Human{
 		this.placeOfWork = placeOfWork;
 		this.occupation = occupation;
 	}
+	
+	public String getOccupation() {
+		return occupation;
+	}
+	
+	public String getPlaceOfWork() {
+		return placeOfWork;
+	}
 
 }

@@ -1,3 +1,5 @@
+import java.time.*;
+
 public class Human {
 	private int birthYear;
 	private int birthMonth;
@@ -5,6 +7,8 @@ public class Human {
 	private String firstName;
 	private String lastName;
 	private Gender gender;
+	
+	private static final int[] daysInMonth = {0,31,28,31,30,31,30,31,31,30,31,30,31}; //zero days in month 0
 	
 	public Human(int birthYear, int birthMonth, int birthDay, String firstName, String lastName, Gender gender) {
 		this.birthYear = birthYear;
@@ -33,5 +37,20 @@ public class Human {
 	
 	public String getLastName() {
 		return lastName;
+	}
+	
+	public Gender getGender() {
+		return gender;
+	}
+	
+	public int calculateCurrentAgeInYears() {
+		LocalDateTime time = LocalDateTime.now();
+		
+		int currentYear = time.getYear();
+		int currentMonth = time.getMonthValue();
+		int currentDay = time.getDayOfMonth();
+		
+		int years = currentYear - birthYear;
+		if (years)
 	}
 }

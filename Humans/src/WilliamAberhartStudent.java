@@ -11,5 +11,16 @@ public class WilliamAberhartStudent extends Youth{
 		this.homeRoom = homeRoom;
 		this.homeRoomTeacher = homeRoomTeacher;
 	}
-
+	
+	public int getHomeRoom() {
+		return homeRoom;
+	}
+	
+	public String getHomeRoomTeacher() {
+		return homeRoomTeacher;
+	}
+	
+	public String getShoolName() {
+		return schoolName;
+	}
 }

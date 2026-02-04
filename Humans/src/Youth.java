@@ -10,5 +10,13 @@ public class Youth extends Human{
 		this.schoolGrade = schoolGrade;
 		this.schoolName = schoolName;
 	}
+	
+	public int getSchoolGrade() {
+		return schoolGrade;
+	}
+	
+	public String getSchoolName() {
+		return schoolName;
+	}
 
 }
