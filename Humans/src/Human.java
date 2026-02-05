@@ -63,8 +63,6 @@ public class Human {
 		int currentMonth = time.getMonthValue();
 		int currentDay = time.getDayOfMonth();
 		
-		int days = 0;
-		int months = 0;
 		int years = 0;
 		
 		if (currentDay < birthDay) {
@@ -75,7 +73,6 @@ public class Human {
 		if (currentMonth < birthMonth) {
 			currentMonth += MONTHS_IN_YEAR;
 			currentYear--;
-			months = currentMonth - birthMonth;
 		}
 		
 		years = currentYear - birthYear;
