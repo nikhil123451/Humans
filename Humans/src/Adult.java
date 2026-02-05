@@ -18,5 +18,14 @@ public class Adult extends Human{
 	public String getPlaceOfWork() {
 		return placeOfWork;
 	}
+	
+	public void setOccupation(String occupation) {
+		this.occupation = occupation;
+	}
+	
+	public void setPlaceOfWork(String placeOfWork) {
+		this.placeOfWork = placeOfWork;
+	}
+
 
 }

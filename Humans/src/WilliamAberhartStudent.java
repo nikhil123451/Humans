@@ -23,4 +23,16 @@ public class WilliamAberhartStudent extends Youth{
 	public String getShoolName() {
 		return schoolName;
 	}
+	
+	public void setHomeRoom(int roomNumber) {
+		homeRoom = roomNumber;
+	}
+	
+	public void setHomeRoomTeacher(String teacher) {
+		homeRoomTeacher = teacher;
+	}
+	
+	public void setSchoolName(String name) throws UnsupportedOperationException{
+		throw new UnsupportedOperationException();
+	}
 }

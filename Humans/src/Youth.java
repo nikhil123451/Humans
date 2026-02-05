@@ -18,5 +18,12 @@ public class Youth extends Human{
 	public String getSchoolName() {
 		return schoolName;
 	}
-
+	
+	public void setSchoolGrade(int grade) {
+		schoolGrade = grade;
+	}
+	
+	public void setSchoolName(String name) {
+		schoolName = name;
+	}
 }
