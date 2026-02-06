@@ -1,4 +1,5 @@
 import java.time.*;
+import java.util.Comparator;
 
 public class Human implements Comparable<Human>{
 	private int birthYear;
@@ -8,8 +9,12 @@ public class Human implements Comparable<Human>{
 	private String lastName;
 	private Gender gender;
 	
-	private static final int[] DAYS_IN_MONTHS = {0,31,28,31,30,31,30,31,31,30,31,30,31}; //zero days in month 0
+	private static final int[] DAYS_IN_MONTHS = {31,31,28,31,30,31,30,31,31,30,31,30,31}; //0th month refers to the December of the year prior
 	private static final int MONTHS_IN_YEAR = 12;
+	
+	public static Comparator<Human> AGE_ORDER = new AgeOrder();
+	public static Comparator<Human> NAME_ORDER = new NameOrder();
+	public static Comparator<Human> ASSEMBLY_ORDER = new AssemblyOrder();
 	
 	public Human(int birthYear, int birthMonth, int birthDay, String firstName, String lastName, Gender gender) {
 		this.birthYear = birthYear;
@@ -57,26 +62,7 @@ public class Human implements Comparable<Human>{
 	}
 	
 	public int calculateCurrentAgeInYears() {
-		LocalDateTime time = LocalDateTime.now();
-		
-		int currentYear = time.getYear();
-		int currentMonth = time.getMonthValue();
-		int currentDay = time.getDayOfMonth();
-		
-		int years = 0;
-		
-		if (currentDay < birthDay) {
-			currentDay += DAYS_IN_MONTHS[currentMonth];
-			currentMonth--;
-		}
-		
-		if (currentMonth < birthMonth) {
-			currentMonth += MONTHS_IN_YEAR;
-			currentYear--;
-		}
-		
-		years = currentYear - birthYear;
-		return years;
+		return calculateCurrentAge()[0];
 	}
 	
 	public int[] calculateCurrentAge() {
@@ -91,7 +77,7 @@ public class Human implements Comparable<Human>{
 		int years = 0;
 		
 		if (currentDay < birthDay) {
-			currentDay += DAYS_IN_MONTHS[currentMonth];
+			currentDay += DAYS_IN_MONTHS[currentMonth - 1];
 			currentMonth--;
 		}
 		
