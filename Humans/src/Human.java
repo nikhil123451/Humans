@@ -62,7 +62,7 @@ public class Human implements Comparable<Human>{
 	}
 	
 	public int calculateCurrentAgeInYears() {
-		return calculateCurrentAge()[0];
+		return calculateCurrentAge()[0]; //calculateCurrentAge returns an int[] in the format {years, months, days}
 	}
 	
 	public int[] calculateCurrentAge() {
@@ -94,8 +94,6 @@ public class Human implements Comparable<Human>{
 	}
 
 	public int compareTo(Human human) {
-		String name = getLastName();
-		String otherName = human.getLastName();
 		int[] age = calculateCurrentAge();
 		int[] otherAge = human.calculateCurrentAge();
 		
