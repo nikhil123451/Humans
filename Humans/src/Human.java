@@ -9,7 +9,7 @@ public class Human implements Comparable<Human>{
 	private String lastName;
 	private Gender gender;
 	
-	private static final int[] DAYS_IN_MONTHS = {31,31,28,31,30,31,30,31,31,30,31,30,31}; //0th month refers to the December of the year prior
+	private static final int[] DAYS_IN_MONTHS = {0,31,28,31,30,31,30,31,31,30,31,30,31}; //no days in the 0th month
 	private static final int MONTHS_IN_YEAR = 12;
 	
 	public static Comparator<Human> AGE_ORDER = new AgeOrder();
@@ -77,7 +77,7 @@ public class Human implements Comparable<Human>{
 		int years = 0;
 		
 		if (currentDay < birthDay) {
-			currentDay += DAYS_IN_MONTHS[currentMonth - 1];
+			currentDay += DAYS_IN_MONTHS[currentMonth];
 			currentMonth--;
 		}
 		
